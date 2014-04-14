@@ -2,13 +2,16 @@ require 'spec_helper'
 
 describe "StaticPages" do
   describe "Home page" do
+
+    before {visit root_path}
+
     it "should have the content Sample App" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
      visit root_path
       page.should have_selector("h1", text:'Third App')
     end
       it "should have a title" do
-     visit root_path
+     
     page.should have_selector("title", text: 'Home Page')
     end
   end
@@ -34,7 +37,7 @@ describe "StaticPages" do
       page.should have_selector("title", text: 'About Page')
     end
   end
-  describe "Conatct page" do
+  describe "Contact page" do
    it "should have the contect Contact Us" do
 
    visit contact_path
@@ -46,4 +49,10 @@ describe "StaticPages" do
    end 
   end
   
-end   
+end  
+
+
+
+
+
+
